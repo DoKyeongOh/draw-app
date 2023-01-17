@@ -25,16 +25,20 @@ function onMouseMove(event) {
     ctx.stroke();
 }
 function onMouseDown(event) {
-    isPainting
- = true;
+    isPainting = true;
 }
 function cancelPainting(event) {
-    isPainting
- = false;
+    isPainting = false;
+    ctx.beginPath();
+}
+function onLineWidtChange(event) {
+    ctx.lineWidth = event.target.value;
 }
 
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
+
+lineWidth.addEventListener("change", onLineWidtChange);
 
