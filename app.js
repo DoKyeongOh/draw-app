@@ -11,6 +11,7 @@ canvas.height = 800;
 
 let isPainting = false;
 function onMouseMove(event) {
+let isFilling = false;
     if (!isPainting) {
         return;
     }
@@ -42,11 +43,17 @@ function onModeClick(event) {
         modeBtn.innerHTML = "Fill";
     } 
 }
+function onCanvasClick() {
+    if (isFilling) {
+        ctx.fillRect(0, 0, 800, 800);
+    }
+}
 
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
+canvas.addEventListener("click", onCanvasClick);
 lineWidth.addEventListener("change", onLineWidtChange);
 color.addEventListener("change", onColorChange);
 colorOptions.forEach(color => color.addEventListener("click", onColorClick));
