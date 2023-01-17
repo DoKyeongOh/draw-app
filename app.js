@@ -52,6 +52,10 @@ function onCanvasClick() {
         ctx.fillRect(0, 0, 800, 800);
     }
 }
+function onDestroyClick() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+}
 
 canvas.addEventListener("mousemove", onCanvasMouseMove);
 canvas.addEventListener("mousedown", onCanvasMouseDown);
@@ -63,3 +67,4 @@ lineWidth.addEventListener("change", onLineWidtChange);
 color.addEventListener("change", onColorChange);
 colorOptions.forEach(color => color.addEventListener("click", onColorClick));
 modeBtn.addEventListener("click", onModeClick);
+destroyBtn.addEventListener("click", onDestroyClick);
