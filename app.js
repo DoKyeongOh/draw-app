@@ -51,7 +51,7 @@ function onModeClick(event) {
 }
 function onCanvasClick() {
     if (isFilling) {
-        ctx.fillRect(0, 0, 800, 800);
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
 }
 function onDestroyClick() {
