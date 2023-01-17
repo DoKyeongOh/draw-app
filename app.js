@@ -13,4 +13,27 @@ const colors = [
     "#f5f6fa"
 ];
 
+let isPainting = false;
+function onMouseMove(event) {
+    if (!isPainting
+    ) {
+        ctx.moveTo(event.offsetX, event.offsetY);
+        return;
+    }
+    ctx.lineTo(event.offsetX, event.offsetY);
+    ctx.stroke();
+}
+function onMouseDown(event) {
+    isPainting
+ = true;
+}
+function cancelPainting(event) {
+    isPainting
+ = false;
+}
+
+canvas.addEventListener("mousemove", onMouseMove);
+canvas.addEventListener("mousedown", onMouseDown);
+canvas.addEventListener("mouseup", cancelPainting);
+canvas.addEventListener("mouseleave", cancelPainting);
 
