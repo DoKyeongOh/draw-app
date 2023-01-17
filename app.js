@@ -6,8 +6,10 @@ const color = document.getElementById("color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
 const modeBtn = document.getElementById("mode-btn");
 
-canvas.width = 800;
-canvas.height = 800;
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 800;
+canvas.width = CANVAS_WIDTH;
+canvas.height = CANVAS_HEIGHT;
 let isPainting = false;
 let isFilling = false;
 
