@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 const lineWidth = document.getElementById("line-width"); 
 const color = document.getElementById("color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
+const modeBtn = document.getElementById("mode-btn");
 
 canvas.width = 800;
 canvas.height = 800;
