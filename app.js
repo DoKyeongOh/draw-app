@@ -35,6 +35,13 @@ function onColorClick(event) {
     ctx.fillStyle = event.target.dataset.color;
     color.value = event.target.dataset.color;
 }
+function onModeClick(event) {
+    isFilling = !isFilling;
+    modeBtn.innerHTML = "Draw";
+    if (!isFilling) {
+        modeBtn.innerHTML = "Fill";
+    } 
+}
 
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mousedown", onMouseDown);
