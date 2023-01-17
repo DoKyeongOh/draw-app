@@ -30,6 +30,8 @@ function onLineWidtChange(event) {
 }
 function onColorChange(event) {
     ctx.strokeStyle = event.target.value;
+    ctx.fillStyle = event.target.value;
+    color.value = event.target.value;
 }
 function onColorClick(event) {
     ctx.strokeStyle = event.target.dataset.color;
