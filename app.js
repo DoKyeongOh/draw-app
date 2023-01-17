@@ -2,6 +2,7 @@ const color = document.getElementById("color");
 const lineWidth = document.getElementById("line-width"); 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
+const colorOptions = Array.from(document.getElementsByClassName("color-option"));
 canvas.width = 800;
 canvas.height = 800;
 
