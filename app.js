@@ -8,17 +8,17 @@ const modeBtn = document.getElementById("mode-btn");
 
 canvas.width = 800;
 canvas.height = 800;
-
 let isPainting = false;
-function onMouseMove(event) {
 let isFilling = false;
+
+function onCanvasMouseMove(event) {
     if (!isPainting) {
         return;
     }
     ctx.lineTo(event.offsetX, event.offsetY);
     ctx.stroke();
 }
-function onMouseDown(event) {
+function onCanvasMouseDown(event) {
     isPainting = true;
 }
 function cancelPainting(event) {
@@ -51,11 +51,12 @@ function onCanvasClick() {
     }
 }
 
-canvas.addEventListener("mousemove", onMouseMove);
-canvas.addEventListener("mousedown", onMouseDown);
+canvas.addEventListener("mousemove", onCanvasMouseMove);
+canvas.addEventListener("mousedown", onCanvasMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 canvas.addEventListener("click", onCanvasClick);
+
 lineWidth.addEventListener("change", onLineWidtChange);
 color.addEventListener("change", onColorChange);
 colorOptions.forEach(color => color.addEventListener("click", onColorClick));
