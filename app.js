@@ -14,6 +14,7 @@ const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
+ctx.lineWidth = lineWidth.value;
 let isPainting = false;
 let isFilling = false;
 
