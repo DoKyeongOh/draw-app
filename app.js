@@ -85,6 +85,13 @@ function onCanvasDbClick(event) {
     ctx.fillText(textInput.value, event.offsetX, event.offsetY);
     ctx.restore();
 }
+function onSaveClick() {
+    const url = canvas.toDataURL();
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "myImage.png";
+    a.click();
+}
 
 canvas.addEventListener("mousemove", onCanvasMouseMove);
 canvas.addEventListener("mousedown", onCanvasMouseDown);
@@ -100,3 +107,5 @@ modeBtn.addEventListener("click", onModeClick);
 destroyBtn.addEventListener("click", onDestroyClick);
 eraserBtn.addEventListener("click", onEraseClick);
 fileInput.addEventListener("change", onFileChange);
+saveBtn.addEventListener("click", onSaveClick);
+
