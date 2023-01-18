@@ -64,6 +64,16 @@ function onEraseClick() {
     isFilling = false;
     modeBtn.innerHTML = "Fill";
 }
+function onFileChange(event) {
+    const file = event.target.files[0];
+    const url = URL.createObjectURL(file);
+    const image = new Image();
+    image.src = url;
+    image.onload = function() {
+        ctx.drawImage(image, 0, 0, 800, 800);
+    }
+    fileInput.value = null;
+}
 
 canvas.addEventListener("mousemove", onCanvasMouseMove);
 canvas.addEventListener("mousedown", onCanvasMouseDown);
@@ -77,3 +87,4 @@ colorOptions.forEach(color => color.addEventListener("click", onColorClick));
 modeBtn.addEventListener("click", onModeClick);
 destroyBtn.addEventListener("click", onDestroyClick);
 eraserBtn.addEventListener("click", onEraseClick);
+fileInput.addEventListener("change", onFileChange);
