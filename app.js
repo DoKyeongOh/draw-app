@@ -75,12 +75,20 @@ function onFileChange(event) {
     }
     fileInput.value = null;
 }
+function onCanvasDbClick(event) {
+    ctx.save();
+    ctx.lineWidth = 1;
+    ctx.font = "68px serif";
+    ctx.fillText(textInput.value, event.offsetX, event.offsetY);
+    ctx.restore();
+}
 
 canvas.addEventListener("mousemove", onCanvasMouseMove);
 canvas.addEventListener("mousedown", onCanvasMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 canvas.addEventListener("click", onCanvasClick);
+canvas.addEventListener("dblclick", onCanvasDbClick);
 
 lineWidth.addEventListener("change", onLineWidtChange);
 color.addEventListener("change", onColorChange);
